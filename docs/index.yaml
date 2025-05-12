@@ -3,7 +3,7 @@ entries:
   frigate-llava:
   - apiVersion: v2
     appVersion: "1.0"
-    created: "2025-05-12T08:08:59.853242851-05:00"
+    created: "2025-05-12T08:12:52.627095179-05:00"
     description: Frigate + LLaVA integration for advanced AI inference
     digest: 7ca74a42f89b569bb06ac5bcf903d446049e6efcaf4b1989c73023045a2145e1
     name: frigate-llava
@@ -11,4 +11,4 @@ entries:
     urls:
     - https://tan-tan-san.github.io/helm-charts/frigate-llava-0.1.0.tgz
     version: 0.1.0
-generated: "2025-05-12T08:08:59.853105172-05:00"
+generated: "2025-05-12T08:12:52.626962049-05:00"
