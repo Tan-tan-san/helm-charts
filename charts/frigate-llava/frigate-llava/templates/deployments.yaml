@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inference-broker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: inference-broker
+  template:
+    metadata:
+      labels:
+        app: inference-broker
+    spec:
+      containers:
+        - name: broker
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: MQTT_BROKER
+              value: "{{ .Values.mqtt.broker }}"
+            - name: LAVA_URL
+              value: "{{ .Values.lava.url }}"
+            - name: FRIGATE_API_URL
+              value: "{{ .Values.frigate.url }}"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: llava
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: llava
+  template:
+    metadata:
+      labels:
+        app: llava
+    spec:
+      containers:
+        - name: llava
+          image: "{{ .Values.llava.image.repository }}:{{ .Values.llava.image.tag }}"
+          imagePullPolicy: {{ .Values.llava.image.pullPolicy }}
+          ports:
+            - containerPort: 8000
