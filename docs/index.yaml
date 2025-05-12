@@ -9,6 +9,6 @@ entries:
     name: frigate-llava
     type: application
     urls:
-    - https://tan-tan-san.github.io/helm-charts/frigate-llava-0.1.0.tgz
+    - https://Tan-tan-san.github.io/helm-charts/frigate-llava-0.1.0.tgz
     version: 0.1.0
 generated: "2025-05-12T08:12:52.626962049-05:00"
